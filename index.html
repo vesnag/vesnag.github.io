@@ -9,6 +9,19 @@
     href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     rel="stylesheet">
   <style>
+    :root {
+      --color1: rgba(241, 241, 243, 1);
+      --color2: rgba(125, 91, 177, 1);
+      --color3: rgba(175, 113, 186, 1);
+      --color4: rgba(236, 244, 231, 1);
+      --color5: rgba(136, 52, 148, 1);
+      --color6: rgba(146, 73, 190, 1);
+      --color7: rgba(150, 78, 154, 1);
+      --color8: rgba(238, 242, 243, 1);
+      --color9: rgba(240, 120, 166, 1);
+      --color10: rgba(105, 48, 163, 1);
+    }
+
     body {
       background: linear-gradient(135deg, rgba(241, 241, 243, 1) 0%, rgba(236, 244, 231, 1) 50%, rgba(238, 242, 243, 1) 100%);
       color: rgba(136, 52, 148, 1);
@@ -36,20 +49,20 @@
       height: 50px;
       border-radius: 50%;
       margin: 20px auto;
-      animation: colorCycle 5s infinite linear;
+      animation: colorCycle 25s infinite linear;
     }
 
     @keyframes colorCycle {
-      0% { background-color: rgba(241, 241, 243, 1); }
-      11% { background-color: rgba(125, 91, 177, 1); }
-      22% { background-color: rgba(175, 113, 186, 1); }
-      33% { background-color: rgba(236, 244, 231, 1); }
-      44% { background-color: rgba(136, 52, 148, 1); }
-      55% { background-color: rgba(146, 73, 190, 1); }
-      66% { background-color: rgba(150, 78, 154, 1); }
-      77% { background-color: rgba(238, 242, 243, 1); }
-      88% { background-color: rgba(240, 120, 166, 1); }
-      100% { background-color: rgba(105, 48, 163, 1); }
+      0% { background-color: var(--color1); }
+      11% { background-color: var(--color2); }
+      22% { background-color: var(--color3); }
+      33% { background-color: var(--color4); }
+      44% { background-color: var(--color5); }
+      55% { background-color: var(--color6); }
+      66% { background-color: var(--color7); }
+      77% { background-color: var(--color8); }
+      88% { background-color: var(--color9); }
+      100% { background-color: var(--color10); }
     }
   </style>
 </head>
