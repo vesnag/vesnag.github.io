@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, rgba(241, 241, 243, 1) 0%, rgba(236, 244, 231, 1) 50%, rgba(238, 242, 243, 1) 100%);
+      color: rgba(136, 52, 148, 1);
+      /* Dark purple text */
+    }
+
+    .custom-header {
+      background-color: rgba(125, 91, 177, 1);
+      /* Purple header */
+      color: white;
+    }
+
+    .custom-button {
+      background-color: rgba(240, 120, 166, 1);
+      /* Pink button */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <header class="custom-header text-3xl font-bold p-4 text-center">
+    About Me
+  </header>
+  <main class="p-4">
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-2">Hello, I'm [Your Name]</h2>
+      <p class="text-lg">
+        This is a placeholder for my personal "About Me" page. More content will
+        be added here later.
+      </p>
+      <button class="custom-button" onclick="changeHeaderColor()">Change Header
+        Color</button>
+    </section>
+  </main>
+  <script>
+    const colors = [
+      'rgba(125,91,177,1)',
+      'rgba(175,113,186,1)',
+      'rgba(136,52,148,1)',
+      'rgba(146,73,190,1)',
+      'rgba(150,78,154,1)',
+      'rgba(105,48,163,1)',
+      'rgba(240,120,166,1)'
+    ];
+    let currentColorIndex = 0;
+    function changeHeaderColor() {
+      const header = document.querySelector('.custom-header');
+      header.style.backgroundColor = colors[currentColorIndex];
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+  </script>
+</body>
+
+</html>
