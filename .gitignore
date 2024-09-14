@@ -3,10 +3,6 @@ node_modules/
 package-lock.json
 yarn.lock
 
-# Tailwind CSS build files
-output.css
-output.css.map
-
 # Logs
 logs/
 *.log
