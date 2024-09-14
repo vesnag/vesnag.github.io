@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden-content {
+  display: none;
+}
+
+/* Dark mode background and transition */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Flexbox header to center the title and position the icon */
+header {
+  display: flex;
+  justify-content: center;
+  /* Center the title horizontally */
+  align-items: center;
+  /* Center vertically */
+  position: relative;
+}
+
+/* Ensure the icon is positioned on the right */
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  /* Adjust as needed */
+  transform: translateY(-50%);
+  /* Center the icon vertically */
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* The "sun" icon */
+.icon svg.sun {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: #f59e0b;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* The "moon" icon (initially hidden) */
+.icon svg.moon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: #e5e7eb;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* When dark mode is enabled, show the moon and hide the sun */
+.dark .icon svg.sun {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dark .icon svg.moon {
+  opacity: 1;
+  transform: scale(1);
+}

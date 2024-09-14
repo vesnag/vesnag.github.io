@@ -5,101 +5,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet">
-  <style>
-    :root {
-      --color1: rgba(241, 241, 243, 1);
-      --color2: rgba(125, 91, 177, 1);
-      --color3: rgba(175, 113, 186, 1);
-      --color4: rgba(236, 244, 231, 1);
-      --color5: rgba(136, 52, 148, 1);
-      --color6: rgba(146, 73, 190, 1);
-      --color7: rgba(150, 78, 154, 1);
-      --color8: rgba(238, 242, 243, 1);
-      --color9: rgba(240, 120, 166, 1);
-      --color10: rgba(105, 48, 163, 1);
-    }
-
-    body {
-      background: linear-gradient(135deg, rgba(241, 241, 243, 1) 0%, rgba(236, 244, 231, 1) 50%, rgba(238, 242, 243, 1) 100%);
-      color: rgba(136, 52, 148, 1);
-      /* Dark purple text */
-    }
-
-    .custom-header {
-      background-color: rgba(125, 91, 177, 1);
-      /* Purple header */
-      color: white;
-    }
-
-    .custom-button {
-      background-color: rgba(240, 120, 166, 1);
-      /* Pink button */
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .candy {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin: 20px auto;
-      animation: colorCycle 25s infinite linear;
-    }
-
-    @keyframes colorCycle {
-      0% { background-color: var(--color1); }
-      11% { background-color: var(--color2); }
-      22% { background-color: var(--color3); }
-      33% { background-color: var(--color4); }
-      44% { background-color: var(--color5); }
-      55% { background-color: var(--color6); }
-      66% { background-color: var(--color7); }
-      77% { background-color: var(--color8); }
-      88% { background-color: var(--color9); }
-      100% { background-color: var(--color10); }
-    }
-  </style>
+  <!-- Use locally built Tailwind CSS -->
+  <link rel="stylesheet" href="./output.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-  <header class="custom-header text-3xl font-bold p-4 text-center">
+<body
+  class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+  <header
+    class="relative bg-purple-700 dark:bg-gray-800 text-white dark:text-gray-300 text-3xl font-bold p-6 transition-colors duration-300">
     About Me
+    <!-- Dark/Light Mode Switch Icon (aligned to the right) -->
+    <div id="theme-toggle" class="icon w-8 h-8 absolute top-2 right-4">
+      <!-- Sun Icon (Improved Clarity) -->
+      <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" fill="#f59e0b"></circle>
+        <g stroke="#f59e0b" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="4"></line>
+          <line x1="12" y1="20" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+          <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="4" y2="12"></line>
+          <line x1="20" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+          <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+        </g>
+      </svg>
+      <!-- Moon Icon -->
+      <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M21.83 15.904a10 10 0 0 1-8.656-13.1 10.004 10.004 0 1 0 8.657 13.1zm.149-1.488a8 8 0 0 1-8.759-9.913A8.004 8.004 0 1 0 21.98 14.416z" />
+      </svg>
+    </div>
   </header>
-  <main class="p-4">
-    <section class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-2">Hello, I'm Vesna</h2>
-      <p class="text-lg mb-4">
-        This is a placeholder for my personal "About Me" page. More content will
-        be added here later.
+
+  <!-- Main Content Section -->
+  <main class="p-6">
+    <section class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4 dark:text-white">Hello, I'm Vesna
+      </h2>
+      <p class="text-lg mb-6 dark:text-gray-300">
+        Welcome to my personal "About Me" page. More content will be added soon.
       </p>
-      <button class="custom-button" onclick="changeHeaderColor()">Change Header
-        Color</button>
+      <button
+        class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+        onclick="changeHeaderColor()">
+        Change Header Color
+      </button>
     </section>
-    <div class="candy"></div>
+
+    <!-- Links to Tech Stack and Soft Skills -->
+    <section class="mt-10 max-w-4xl mx-auto text-center">
+      <div class="flex justify-center gap-4">
+        <a href="javascript:void(0)"
+          class="text-purple-500 hover:text-purple-700 dark:text-purple-300 underline font-semibold text-lg transition-colors duration-300"
+          onclick="toggleContent('techStack', 'softSkills')">Tech Stack</a>
+        <a href="javascript:void(0)"
+          class="text-purple-500 hover:text-purple-700 dark:text-purple-300 underline font-semibold text-lg transition-colors duration-300"
+          onclick="toggleContent('softSkills', 'techStack')">Soft Skills</a>
+      </div>
+    </section>
+
+    <!-- Tech Stack with Categories -->
+    <section id="techStack"
+      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300">
+      <h4 class="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300">Tech
+        Stack</h4>
+
+      <!-- Level 1 - Expert Knowledge -->
+
+      <!-- Languages -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Languages</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>PHP</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Typescript</li>
+        <li>Twig</li>
+      </ul>
+
+      <!-- Cloud Platforms & Databases -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">Cloud
+        Platforms & Databases</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>Acquia Cloud</li>
+        <li>mySQL</li>
+        <li>Platform SH</li>
+        <li>Pantheon</li>
+        <li>AWS</li>
+        <li>GCP</li>
+      </ul>
+
+      <!-- Frameworks & Libraries -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Frameworks & Libraries</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>Drupal</li>
+        <li>Symfony</li>
+        <li>jQuery</li>
+        <li>p5.js</li>
+        <li>Ml5.js</li>
+        <li>Hugo</li>
+        <li>HTMX</li>
+      </ul>
+
+      <!-- Testing & Tools -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Testing & Tools</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>PHPStan</li>
+        <li>Behat</li>
+        <li>Unit Testing</li>
+        <li>Functional Testing</li>
+        <li>Kernel Testing</li>
+        <li>Git, Gitflow</li>
+      </ul>
+
+      <!-- Technologies -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Technologies</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>APIs, OOP, Clean Coding, TDD</li>
+        <li>Docker, DDEV, Docsal, Vagrant</li>
+        <li>SSO JWT, Oauth, SAML</li>
+        <li>Salesforce, Gygyia, Cognito</li>
+        <li>Elastic Search, Solr, Typesene, GIT</li>
+      </ul>
+
+      <!-- DevOps & Infrastructure -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">DevOps
+        & Infrastructure</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>Docker</li>
+        <li>Linux (Ubuntu, CentOS)</li>
+        <li>CI/CD pipelines (GitLab CI, Jenkins)</li>
+        <li>Kubernetes (if applicable)</li>
+        <li>Terraform (if applicable)</li>
+      </ul>
+
+      <!-- Level 2 - Intermediate Knowledge -->
+      <h5 class="text-xl font-semibold mt-6 mb-2 text-gray-800 dark:text-gray-300">
+        Level 2 - Intermediate Knowledge</h5>
+
+      <!-- Languages & Frameworks -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Languages & Frameworks</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>Python</li>
+        <li>Java</li>
+        <li>Go</li>
+        <li>React</li>
+        <li>Next.js</li>
+      </ul>
+
+      <!-- Libraries & Tools -->
+      <h6 class="text-lg font-semibold mt-4 text-gray-800 dark:text-gray-300">
+        Libraries & Tools</h6>
+      <ul class="list-disc ml-6 text-left text-gray-700 dark:text-gray-400">
+        <li>Mermaid</li>
+        <li>Flask</li>
+        <li>Doctrine</li>
+      </ul>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="softSkills"
+      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300">
+      <h4 class="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-400">
+        Soft Skills</h4>
+      <ul class="list-disc ml-6 text-left dark:text-gray-300">
+        <li>Highly engaged and passionate in all projects</li>
+        <li>Collaborative team player with strong independent initiative</li>
+        <li>Eager to mentor, share knowledge, and support peers</li>
+        <li>Committed to continuous learning and professional development</li>
+        <li>Responsible, accountable, and dependable in all tasks</li>
+        <li>Effective problem solver with a focus on delivering quality results
+        </li>
+      </ul>
+    </section>
+
+    <!-- Candy Element with Color Cycle Animation -->
+    <div
+      class="w-16 h-16 rounded-full mt-10 mx-auto animate-spin bg-gradient-to-r from-purple-500 to-pink-500">
+    </div>
   </main>
-  <script>
-    const colors = [
-      'rgba(125,91,177,1)',
-      'rgba(175,113,186,1)',
-      'rgba(136,52,148,1)',
-      'rgba(146,73,190,1)',
-      'rgba(150,78,154,1)',
-      'rgba(105,48,163,1)',
-      'rgba(240,120,166,1)'
-    ];
-    let currentColorIndex = 0;
-    function changeHeaderColor() {
-      const header = document.querySelector('.custom-header');
-      header.style.backgroundColor = colors[currentColorIndex];
-      currentColorIndex = (currentColorIndex + 1) % colors.length;
-    }
-  </script>
+
+  <footer
+    class="text-white dark:text-gray-300 py-4 mt-10 bg-purple-700 dark:bg-gray-800 transition-colors duration-300">
+    <div class="text-center">
+      &copy; 2024 - Vesna's Portfolio
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 
 </html>
