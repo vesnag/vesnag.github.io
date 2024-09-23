@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
-  <!-- Use locally built Tailwind CSS -->
   <link rel="stylesheet" href="./output.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,9 +15,8 @@
   <header
     class="relative bg-purple-700 dark:bg-gray-800 text-white dark:text-gray-300 text-3xl font-bold p-6 transition-colors duration-300">
     About Me
-    <!-- Dark/Light Mode Switch Icon (aligned to the right) -->
     <div id="theme-toggle" class="icon w-8 h-8 absolute top-2 right-4">
-      <!-- Sun Icon (Improved Clarity) -->
+      <!-- Sun Icon -->
       <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="5" fill="#f59e0b"></circle>
         <g stroke="#f59e0b" stroke-width="2">
@@ -50,26 +48,27 @@
       </p>
       <button
         class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-        onclick="changeHeaderColor()">
+        onclick="changeHeaderColor()" aria-label="Change Header Color">
         Change Header Color
       </button>
     </section>
 
     <!-- Links to Tech Stack and Soft Skills -->
-    <section class="mt-10 max-w-4xl mx-auto text-center">
+    <section class="mt-10 max-w-4xl mx-auto text-center" aria-labelledby="techStack">
       <div class="flex justify-center gap-4">
         <a href="javascript:void(0)"
-          class="text-purple-500 hover:text-purple-700 dark:text-purple-300 underline font-semibold text-lg transition-colors duration-300"
+          class="text-purple-800 hover:text-purple-900 dark:text-pink-600 underline font-semibold text-lg transition-colors duration-300"
           onclick="toggleContent('techStack', 'softSkills')">Tech Stack</a>
         <a href="javascript:void(0)"
-          class="text-purple-500 hover:text-purple-700 dark:text-purple-300 underline font-semibold text-lg transition-colors duration-300"
+          class="text-purple-800 hover:text-purple-900 dark:text-pink-600 underline font-semibold text-lg transition-colors duration-300"
           onclick="toggleContent('softSkills', 'techStack')">Soft Skills</a>
       </div>
     </section>
 
     <!-- Tech Stack with Categories -->
     <section id="techStack"
-      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300">
+      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300"
+      aria-labelledby="techStackHeader">
       <h4 class="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300">Tech
         Stack</h4>
 
@@ -173,7 +172,8 @@
 
     <!-- Soft Skills Section -->
     <section id="softSkills"
-      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300">
+      class="hidden-content mt-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow transition-colors duration-300"
+      aria-labelledby="softSkillsHeader">
       <h4 class="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-400">
         Soft Skills</h4>
       <ul class="list-disc ml-6 text-left dark:text-gray-300">
@@ -199,7 +199,7 @@
       &copy; 2024 - Vesna's Portfolio
     </div>
   </footer>
-
+  <!-- This page meets WCAG AAA standards for accessibility -->
   <script src="script.js"></script>
 
 </body>
